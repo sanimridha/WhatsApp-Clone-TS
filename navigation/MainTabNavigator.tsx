@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
+import { color } from "react-native-reanimated";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -10,17 +11,26 @@ import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from "../types";
 
-const BottomTab = createMaterialTopTabNavigator<BottomTabParamList>();
+const MainTab = createMaterialTopTabNavigator<BottomTabParamList>();
 
 export default function MainTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <BottomTab.Navigator
+    <MainTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{
+        activeTintColor: Colors[colorScheme].background,
+        style: {
+          backgroundColor: Colors[colorScheme].tint,
+        },
+        indicatorStyle: {
+          backgroundColor: Colors[colorScheme].background,
+          height: 4,
+        },
+      }}
     >
-      <BottomTab.Screen
+      <MainTab.Screen
         name="TabOne"
         component={TabOneNavigator}
         options={{
@@ -29,7 +39,7 @@ export default function MainTabNavigator() {
           ),
         }}
       />
-      <BottomTab.Screen
+      <MainTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
         options={{
@@ -38,7 +48,7 @@ export default function MainTabNavigator() {
           ),
         }}
       />
-    </BottomTab.Navigator>
+    </MainTab.Navigator>
   );
 }
 
