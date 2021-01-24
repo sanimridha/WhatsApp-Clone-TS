@@ -46,9 +46,7 @@ export default function MainTabNavigator() {
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <View
-              style={{ flex: 1, right: 20, flexDirection: "column-reverse" }}
-            >
+            <View style={{ flex: 1, right: 20, top: 3 }}>
               <Fontisto name="camera" size={18} color="#128C7E" />
             </View>
           ),
