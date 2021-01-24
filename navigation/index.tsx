@@ -44,7 +44,7 @@ function RootNavigator() {
         headerStyle: {
           backgroundColor: Colors.light.tint,
           shadowOpacity: 0,
-          elevation: 0,
+          elevation: 0, //this is for removing shadow on Android
         },
         headerTintColor: Colors.light.background,
         headerTitleAlign: "left",
