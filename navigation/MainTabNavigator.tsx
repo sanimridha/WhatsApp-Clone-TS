@@ -28,6 +28,9 @@ export default function MainTabNavigator() {
           backgroundColor: Colors[colorScheme].background,
           height: 4,
         },
+        labelStyle: {
+          fontWeight: "bold",
+        },
       }}
     >
       <MainTab.Screen
@@ -71,7 +74,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        // options={{ headerTitle: "Tab One Title" }}
+        // options={{ headerTitle: "Tab One Title" }} << -->
       />
     </TabOneStack.Navigator>
   );
