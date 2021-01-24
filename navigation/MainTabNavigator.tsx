@@ -34,7 +34,7 @@ export default function MainTabNavigator() {
       }}
     >
       <MainTab.Screen
-        name="TabOne"
+        name="Camera"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -43,7 +43,25 @@ export default function MainTabNavigator() {
         }}
       />
       <MainTab.Screen
-        name="TabTwo"
+        name="Chats"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ios-code" color={color} />
+          ),
+        }}
+      />
+      <MainTab.Screen
+        name="Status"
+        component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ios-code" color={color} />
+          ),
+        }}
+      />
+      <MainTab.Screen
+        name="Calls"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => (
