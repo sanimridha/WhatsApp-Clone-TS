@@ -30,6 +30,9 @@ export default function MainTabNavigator() {
           backgroundColor: Colors[colorScheme].background,
           height: 4,
         },
+        indicatorContainerStyle: {
+          alignItems: "flex-start",
+        },
         labelStyle: {
           fontWeight: "bold",
         },
@@ -38,7 +41,6 @@ export default function MainTabNavigator() {
       style={{
         justifyContent: "space-between",
         flex: 1,
-        // flexDirection: "row",
       }}
     >
       <MainTab.Screen
